@@ -9,7 +9,7 @@ FROM debian:latest
 # Create DST user
 RUN useradd -ms /bin/bash dst
 WORKDIR /home/dst
-#COPY data/ /home/dst/data/
+COPY data/ /home/dst/data/
 
 # Install dependencies
 COPY --from=builder /usr/local/cargo/bin/dst-ping /usr/local/bin/
@@ -35,9 +35,6 @@ VOLUME ["/home/dst/dst_server"]
 
 # volume for config / saves
 VOLUME ["/data"]
-
-# TODO: REMOVE THIS LINE
-COPY data/ /home/dst/data
 
 HEALTHCHECK \
     --timeout=10s \
