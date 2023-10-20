@@ -1,0 +1,45 @@
+version: '3'
+services:
+  dst_master:
+    container_name: dst_master
+    image: wollwolke/dst-dedicated-server 
+    stdin_open: true
+    tty: true
+    networks:
+      - dst_cluster
+    ports:
+      - 11000:11000/udp
+    volumes:
+      - dst_server:/home/dst/dst_server
+      - /path/to/dst_data:/data
+    environment:
+      - CLUSTER_NAME=Dockerized DST Server
+      - CLUSTER_TOKEN={Add you cluster token}
+      - SHARD_NAME=Master
+
+  dst_caves:
+    container_name: dst_caves
+    image: wollwolke/dst-dedicated-server 
+    stdin_open: true
+    tty: true
+    depends_on:
+      dst_master:
+        condition: service_healthy
+    ports:
+      - 10999:10999/udp
+    networks:
+      - dst_cluster
+    links:
+      - dst_master
+    volumes:
+      - dst_server:/home/dst/dst_server
+      - /path/to/dst_data:/data
+    environment:
+      - CLUSTER_NAME=Dockerized DST Server
+      - SHARD_NAME=Caves
+
+networks:
+  dst_cluster:
+
+volumes:
+  dst_server:
