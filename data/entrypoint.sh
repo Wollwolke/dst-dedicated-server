@@ -34,37 +34,37 @@ if [ -z ${KEEP_CLUSTER_CONFIG+x} ]; then
     # replace config values with env vars
     echo "Overwriting cluster config with ENV variables"
     if [ ! -z ${GAME_MODE+x} ]; then
-        sed -i "/^game_mode =/cgame_mode = $GAME_MODE/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^game_mode =/cgame_mode = $GAME_MODE" "/data/$CLUSTER_NAME/cluster.ini"
     fi
     if [ ! -z ${MAX_PLAYERS+x} ]; then
-        sed -i "/^max_players =/cmax_players = $MAX_PLAYERS/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^max_players =/cmax_players = $MAX_PLAYERS" "/data/$CLUSTER_NAME/cluster.ini"
     fi
     if [ ! -z ${PVP+x} ]; then
-        sed -i "/^pvp =/cpvp = $PVP/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^pvp =/cpvp = $PVP" "/data/$CLUSTER_NAME/cluster.ini"
     fi
     if [ ! -z ${PAUSE_WHEN_EMPTY+x} ]; then
-        sed -i "/^pause_when_empty =/cpause_when_empty = $PAUSE_WHEN_EMPTY/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^pause_when_empty =/cpause_when_empty = $PAUSE_WHEN_EMPTY" "/data/$CLUSTER_NAME/cluster.ini"
     fi
     if [ ! -z ${CLUSTER_INTENTION+x} ]; then
-        sed -i "/^cluster_intention =/ccluster_intention = $CLUSTER_INTENTION/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^cluster_intention =/ccluster_intention = $CLUSTER_INTENTION" "/data/$CLUSTER_NAME/cluster.ini"
     fi
     if [ ! -z ${CLUSTER_NAME+x} ]; then
-        sed -i "/^cluster_name =/ccluster_name = $CLUSTER_NAME/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^cluster_name =/ccluster_name = $CLUSTER_NAME" "/data/$CLUSTER_NAME/cluster.ini"
     fi
     if [ ! -z ${CLUSTER_DESCRIPTION+x} ]; then
-        sed -i "/^cluster_description =/ccluster_description = $CLUSTER_DESCRIPTION/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^cluster_description =/ccluster_description = $CLUSTER_DESCRIPTION" "/data/$CLUSTER_NAME/cluster.ini"
     fi
     if [ ! -z ${CLUSTER_PW+x} ]; then
-        sed -i "/^cluster_password =/ccluster_password = $CLUSTER_PW/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^cluster_password =/ccluster_password = $CLUSTER_PW" "/data/$CLUSTER_NAME/cluster.ini"
     fi
     if [ ! -z ${STEAM_GROUP_ID+x} ]; then
-        sed -i "/^steam_group_id =/csteam_group_id = $STEAM_GROUP_ID/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^steam_group_id =/csteam_group_id = $STEAM_GROUP_ID" "/data/$CLUSTER_NAME/cluster.ini"
     fi
     if [ ! -z ${STEAM_GROUP_ONLY+x} ]; then
-        sed -i "/^steam_group_only = /csteam_group_only = $STEAM_GROUP_ONLY/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^steam_group_only = /csteam_group_only = $STEAM_GROUP_ONLY" "/data/$CLUSTER_NAME/cluster.ini"
     fi
     if [ ! -z ${STEAM_GROUP_ADMINS+x} ]; then
-        sed -i "/^steam_group_admins =/csteam_group_admins = $STEAM_GROUP_ADMINS/" "/data/$CLUSTER_NAME/cluster.ini"
+        sed -i "/^steam_group_admins =/csteam_group_admins = $STEAM_GROUP_ADMINS" "/data/$CLUSTER_NAME/cluster.ini"
     fi
 fi
 
