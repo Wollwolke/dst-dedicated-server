@@ -13,7 +13,7 @@ fi
 if [ -z ${SHARD_NAME+x} ]; then
     echo "Set mandatory ENV variable SHARD_NAME"
     exit 1
-else
+fi
 
 mkdir -p "/data/$CLUSTER_NAME/"
 

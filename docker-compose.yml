@@ -1,10 +1,12 @@
 version: '3'
 services:
+  #Todo: add hostname
   dst_master:
     container_name: dst_master
     image: wollwolke/dst-dedicated-server 
     stdin_open: true
     tty: true
+    hostname: dst_master
     networks:
       - dst_cluster
     ports:
