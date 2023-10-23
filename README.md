@@ -3,7 +3,6 @@
 [![Docker Buils Status](https://github.com/Wollwolke/dst-dedicated-server/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Wollwolke/dst-dedicated-server/actions/workflows/docker-publish.yml)
 [![License: GPL-3.0](https://img.shields.io/github/license/wollwolke/dst-dedicated-server?label=License)](https://github.com/Wollwolke/dst-dedicated-server/blob/master/LICENSE)
 
-
 The objective of this project is to create a easily configurable DST server for two shards (e.g. Forest + Caves) without having to download the server binary for each shard.  
 The docker image does not include the DST server, the latest one is downloaded and stored in a docker volume on first launch.
 

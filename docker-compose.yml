@@ -1,6 +1,5 @@
 version: '3'
 services:
-  #Todo: add hostname
   dst_master:
     container_name: dst_master
     image: wollwolke/dst-dedicated-server 
@@ -31,8 +30,6 @@ services:
       - 10999:10999/udp
     networks:
       - dst_cluster
-    links:
-      - dst_master
     volumes:
       - dst_server:/home/dst/dst_server
       - /path/to/dst_data:/data
