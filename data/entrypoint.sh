@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Check volume permissions
+if [ ! -w "/data/" ]; then
+    echo "Insufficient permissions to create files in /data. Check data volume permissions."
+    exit 1
+fi
+
+if [ ! -w "/home/dst/dst_server" ]; then
+    echo "Insufficient permissions to create files in /home/dst/dst_server. Check dst_server volume permissions."
+    exit 1
+fi
+
 # Check for game updates before each start. If the game client updates and your server is out of date, you won't be
 # able to see it on the server list. If that happens just restart the containers and you should get the latest version
 

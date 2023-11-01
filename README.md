@@ -27,11 +27,22 @@ Steps to get a server up & running with the default settings.
 4. Run:
 
 ``` sh
+chown -R 1000:1000 /path/to/dst_data
 docker-compose up -d
 ```
 
 >ℹ If the server does not appear in the server browser, make sure that the game and server are up to date.
 Depending on the number of mods, the server may take a few minutes to start.
+
+## Volumes
+
+The container uses two volumes.  
+The first one is mounted to `/home/dst/dst_server` and is used for the server binaries and mods.
+The second volume is used for the configuration data and world files, mounted to `/data`.  
+By default, the first mount uses an unnamed volume and the second mount uses a bind mount to easily modify the configuration files.
+
+>ℹ When utilizing bind mounts, be sure to set the correct owner for each mounted directory using  
+`chown -R 1000:1000 /path/to/dst_data`.
 
 ## Configuration
 
